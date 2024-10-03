@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Stock Prices</title>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Live Stock Prices</h1>
+    </header>
+
+    <!-- Barra de Pesquisa -->
+    <section class="search-container">
+        <input type="text" id="search-stock" placeholder="Buscar Ação..." oninput="searchStock()" />
+    </section>
+
+    <main>
+        <section class="highlighted-prices">
+            <div id="highest-stock" class="highlight-box" aria-live="polite">
+                <strong>Maior Preço:</strong> <span id="highest-price">N/A</span> ↑
+            </div>
+
+            <div id="lowest-stock" class="highlight-box" aria-live="polite">
+                <strong>Menor Preço:</strong> <span id="lowest-price">N/A</span> ↓
+            </div>
+        </section>
+
+        <section class="stock-container" id="stock-container" aria-live="polite">
+            <!-- Blocos de ações serão gerados aqui -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Powered by Real-Time Stock API</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1.5.1/dist/sockjs.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script> <!-- Link para Chart.js -->
+    <script src="app.js" defer></script>
+
+</body>
+
+</html>

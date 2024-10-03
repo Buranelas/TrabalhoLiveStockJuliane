@@ -1,0 +1,135 @@
+/* Estilo Geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d1b2a;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1611095572615-03e9d6dfd80c');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fundo fixo para um efeito visual mais moderno */
+}
+
+/* Título da Página */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 30px;
+    color: #ffffff;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7);
+}
+
+/* Blocos de Informações de Maior e Menor Preço */
+#highest-stock,
+#lowest-stock {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #00e676;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+/* Container Principal das Ações */
+.stock-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Blocos de Ações */
+.stock-block {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #333;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.stock-block:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Nome da Ação */
+.stock-block h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Preço da Ação */
+.stock-block p {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Setas de Aumento e Diminuição */
+.stock-block .arrow {
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+/* Estilo de Aumento */
+.stock-block.increase {
+    border: 2px solid #00e676;
+}
+
+/* Estilo de Queda */
+.stock-block.decrease {
+    border: 2px solid #ff1744;
+}
+
+/* Barra de Pesquisa */
+.search-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #ffffff;
+    outline: none;
+    text-align: center;
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.search-container input[type="text"]:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    border: 2px solid #00e676;
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #cccccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .stock-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding: 10px;
+    }
+
+    #highest-stock,
+    #lowest-stock {
+        font-size: 1.2rem;
+    }
+}
